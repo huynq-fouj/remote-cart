@@ -1,0 +1,11 @@
+@if (quantity) {
+    <div class="flex items-center justify-between">
+        <button class="p-2 bg-gray-300 transition hover:bg-gray-400 text-sm rounded-md size-9" (click)="handleAddProduct(-1)">-</button>
+        <span class="">{{quantity }}</span>
+        <button class="p-2 bg-orange-600 transition hover:bg-orange-700 text-sm text-white rounded-md size-9" (click)="handleAddProduct()">+</button>
+    </div>
+} @else {
+    <button class="w-full h-9 bg-orange-600 text-white text-sm transition hover:bg-orange-700 px-2 py-2 rounded-md flex items-center flex-col justify-center" (click)="handleAddProduct()">
+        <span class="w-full truncate">Thêm vào giỏ hàng</span>
+    </button>
+}

@@ -1,0 +1,19 @@
+<div class="group flex items-center w-full border border-gray-200 rounded-lg p-3 gap-3">
+    <img [src]="product.image" [alt]="product.name" class="size-28 object-cover border border-gray-200 rounded-md shrink-0">
+    <div class="self-stretch grow">
+        <h3 class="w-full font-bold text-xl group-hover:underline group-hover:text-orange-600 transition truncate">{{ product.name }}</h3>
+        <p class="w-full line-clamp-2 text-sm text-gray-500">{{ product.description }}</p>
+        <p class="w-full line-clamp-2 text-sm text-gray-500">Tồn kho: {{ product.onHand }}</p>
+    </div>
+    <div class="w-max flex flex-col items-end justify-between self-stretch">
+        <div class="flex items-center gap-6">
+            <button class="p-2 bg-gray-300 transition hover:bg-gray-400 text-sm rounded-md size-9" (click)="handleAddProduct(-1)">-</button>
+            <span class="min-w-9 text-center">{{ product.quantity }}</span>
+            <button class="p-2 bg-orange-600 transition hover:bg-orange-700 text-sm text-white rounded-md size-9" (click)="handleAddProduct()">+</button>
+        </div>
+        <div class="text-end">
+            <p class="text-sm text-gray-400 line-through">{{ product.originalPrice * product.quantity | currencyFormat }}</p>
+            <p class="text-lg mt-1 font-bold text-orange-600">{{ product.salePrice * product.quantity | currencyFormat }}</p>
+        </div>
+    </div>
+</div>
