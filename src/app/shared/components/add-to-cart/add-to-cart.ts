@@ -16,6 +16,7 @@ export class AddToCart {
 
   handleAddProduct(v: number = 1) {
     this.cartService.addProduct(this.product, v);
+    console.log("Product to add:", this.product);
   }
 
   get quantity() {
