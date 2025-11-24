@@ -1,5 +1,7 @@
 <div class="flex gap-4 flex-col w-full">
-    @for (item of products; track $index) {
+    @for (item of products; track item.id) {
         <app-product-item [product]="item"></app-product-item>
+    } @empty {
+        <span class="text-sm text-center text-gray-400 my-32">Hiện bạn chưa có sản phẩm trong giỏ hàng.</span>
     }
 </div>
